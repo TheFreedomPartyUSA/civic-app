@@ -1,0 +1,42 @@
+[
+  {
+    "id": "freedom_101",
+    "title": "Freedom 101",
+    "description": "Core rights every citizen must understand",
+    "modules": [
+      {
+        "id": "core_rights",
+        "title": "Core Rights",
+        "lessons": [
+          {
+            "title": "What Are Your Rights?",
+            "explanation": "Your rights protect you from government power.",
+            "when_applies": "Any interaction with police or government",
+            "example": "An officer asks you questions on the street",
+            "risk": "You give up rights without knowing",
+            "action": "Stay aware and assert your rights",
+            "script": "What are my rights here?"
+          },
+          {
+            "title": "Search & Seizure",
+            "explanation": "Police need a legal reason or warrant to search you",
+            "when_applies": "Traffic stops or street encounters",
+            "example": "Officer asks to search your car",
+            "risk": "You accidentally give consent",
+            "action": "Clearly refuse consent",
+            "script": "I do not consent to searches"
+          },
+          {
+            "title": "Right to Remain Silent",
+            "explanation": "You do not have to answer police questions",
+            "when_applies": "Questioning or detention",
+            "example": "Officer asks where you're going",
+            "risk": "Talking too much",
+            "action": "Stay calm and silent",
+            "script": "I choose to remain silent"
+          }
+        ]
+      }
+    ]
+  }
+]

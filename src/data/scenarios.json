@@ -1,0 +1,62 @@
+[
+  {
+    "id": "traffic_stop_branching",
+    "title": "Traffic Stop: Search & Questions",
+    "description": "You are pulled over at night.",
+    "steps": {
+      "start": {
+        "question": "Officer: 'Can I search your car?'",
+        "choices": [
+          {
+            "text": "Yes",
+            "correct": false,
+            "next": "search_given",
+            "feedback": "You gave consent."
+          },
+          {
+            "text": "I do not consent to searches",
+            "correct": true,
+            "next": "refused_search",
+            "feedback": "Correct."
+          }
+        ]
+      },
+      "search_given": {
+        "question": "Officer finds something suspicious.",
+        "choices": [
+          {
+            "text": "Explain everything",
+            "correct": false,
+            "next": "end_bad",
+            "feedback": "You may incriminate yourself."
+          }
+        ]
+      },
+      "refused_search": {
+        "question": "Officer keeps questioning you.",
+        "choices": [
+          {
+            "text": "Answer questions",
+            "correct": false,
+            "next": "end_bad",
+            "feedback": "Talking can hurt you."
+          },
+          {
+            "text": "I choose to remain silent",
+            "correct": true,
+            "next": "end_good",
+            "feedback": "Correct."
+          }
+        ]
+      },
+      "end_good": {
+        "end": true,
+        "result": "You protected your rights."
+      },
+      "end_bad": {
+        "end": true,
+        "result": "You gave up key protections."
+      }
+    }
+  }
+]

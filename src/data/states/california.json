@@ -1,0 +1,6 @@
+{
+  "name": "California",
+  "stop_and_identify": false,
+  "id_required": false,
+  "search_rules": "Warrant or probable cause required"
+}

@@ -1,0 +1,10 @@
+{
+  "california": {
+    "id_required": false,
+    "stop_and_identify": false
+  },
+  "texas": {
+    "id_required": true,
+    "stop_and_identify": true
+  }
+}

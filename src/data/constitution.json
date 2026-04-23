@@ -1,0 +1,182 @@
+[
+  {
+    "title": "First Amendment",
+    "type": "amendment",
+    "text": "Protects freedom of speech, religion, press, assembly, and petition.",
+    "tags": ["speech", "religion", "press", "protest"],
+    "applies_when": "Speaking publicly, protesting, posting online",
+    "example": "You criticize the government online",
+    "risk": "Private companies can restrict speech",
+    "action": "Know public vs private limits",
+    "script": "I am exercising my right to free speech.",
+    "state_notes": {}
+  },
+  {
+    "title": "Second Amendment",
+    "type": "amendment",
+    "text": "Protects the right to keep and bear arms, subject to regulation.",
+    "tags": ["guns", "weapons", "self-defense"],
+    "applies_when": "Owning or carrying firearms",
+    "example": "Carrying a firearm legally",
+    "risk": "State laws vary heavily",
+    "action": "Know your state gun laws",
+    "script": "I am within my legal right.",
+    "state_notes": {
+      "CA": "Strict regulations, permits required",
+      "TX": "Permitless carry allowed"
+    }
+  },
+  {
+    "title": "Third Amendment",
+    "type": "amendment",
+    "text": "Prevents forced housing of soldiers in private homes.",
+    "tags": ["military", "privacy"],
+    "applies_when": "Government housing military personnel",
+    "example": "Rarely applies today",
+    "risk": "Minimal real-world use",
+    "action": "Be aware of historical context",
+    "script": "I do not consent to this.",
+    "state_notes": {}
+  },
+  {
+    "title": "Fourth Amendment",
+    "type": "amendment",
+    "text": "Protects against unreasonable searches and seizures. Requires probable cause or a warrant.",
+    "tags": ["search", "police", "privacy"],
+    "applies_when": "Police search you, your car, or home",
+    "example": "Traffic stop search request",
+    "risk": "Consenting removes protection",
+    "action": "Clearly refuse consent",
+    "script": "I do not consent to any searches.",
+    "state_notes": {
+      "IL": "Strong privacy protections",
+      "FL": "Vehicle search exceptions common"
+    }
+  },
+  {
+    "title": "Fifth Amendment",
+    "type": "amendment",
+    "text": "Protects against self-incrimination and guarantees due process.",
+    "tags": ["silence", "interrogation"],
+    "applies_when": "Police questioning or arrest",
+    "example": "Interrogation room",
+    "risk": "Talking can be used against you",
+    "action": "Remain silent and request lawyer",
+    "script": "I am exercising my right to remain silent.",
+    "state_notes": {}
+  },
+  {
+    "title": "Sixth Amendment",
+    "type": "amendment",
+    "text": "Guarantees the right to a lawyer and a fair trial.",
+    "tags": ["lawyer", "trial"],
+    "applies_when": "You are charged with a crime",
+    "example": "Arrest and charges filed",
+    "risk": "Speaking without legal help",
+    "action": "Request attorney immediately",
+    "script": "I want a lawyer.",
+    "state_notes": {}
+  },
+  {
+    "title": "Seventh Amendment",
+    "type": "amendment",
+    "text": "Guarantees jury trials in civil cases.",
+    "tags": ["civil", "court"],
+    "applies_when": "Civil lawsuits",
+    "example": "Being sued",
+    "risk": "Waiving jury unknowingly",
+    "action": "Understand court rights",
+    "script": "I request a jury trial.",
+    "state_notes": {}
+  },
+  {
+    "title": "Eighth Amendment",
+    "type": "amendment",
+    "text": "Prohibits excessive bail, fines, and cruel punishment.",
+    "tags": ["punishment", "bail"],
+    "applies_when": "Arrest, sentencing",
+    "example": "Setting bail",
+    "risk": "Unfair punishment",
+    "action": "Challenge excessive penalties",
+    "script": "This is excessive.",
+    "state_notes": {}
+  },
+  {
+    "title": "Ninth Amendment",
+    "type": "amendment",
+    "text": "Rights exist beyond those listed in the Constitution.",
+    "tags": ["rights", "privacy"],
+    "applies_when": "Unlisted rights",
+    "example": "Privacy rights",
+    "risk": "Rights not explicitly stated",
+    "action": "Understand broader protections",
+    "script": "I have rights beyond those listed.",
+    "state_notes": {}
+  },
+  {
+    "title": "Tenth Amendment",
+    "type": "amendment",
+    "text": "Powers not given to federal government go to states or people.",
+    "tags": ["states", "power"],
+    "applies_when": "State vs federal authority",
+    "example": "State-specific laws",
+    "risk": "Confusion of jurisdiction",
+    "action": "Check state laws",
+    "script": "This is a state matter.",
+    "state_notes": {}
+  },
+
+  // Continue pattern...
+
+  {
+    "title": "Miranda v. Arizona (1966)",
+    "type": "case",
+    "text": "Police must inform you of your right to remain silent and to an attorney.",
+    "tags": ["miranda", "police", "rights"],
+    "applies_when": "Custodial interrogation",
+    "example": "Being questioned after arrest",
+    "risk": "Statements used against you",
+    "action": "Invoke rights clearly",
+    "script": "I want a lawyer.",
+    "state_notes": {}
+  },
+  {
+    "title": "Terry v. Ohio (1968)",
+    "type": "case",
+    "text": "Allows police to stop and frisk with reasonable suspicion.",
+    "tags": ["stop", "frisk", "police"],
+    "applies_when": "Stop and frisk",
+    "example": "Street stop",
+    "risk": "Unlawful searches",
+    "action": "Ask if detained",
+    "script": "Am I being detained?",
+    "state_notes": {}
+  },
+  {
+    "title": "Traffic Stop Protocol",
+    "type": "police",
+    "text": "Police can stop vehicles with reasonable suspicion of a violation.",
+    "tags": ["traffic", "stop"],
+    "applies_when": "Pulled over",
+    "example": "Speeding stop",
+    "risk": "Over-sharing information",
+    "action": "Provide ID only",
+    "script": "I choose to remain silent.",
+    "state_notes": {
+      "CA": "Must show license",
+      "TX": "License required upon request"
+    }
+  },
+  {
+    "title": "Search Consent Rule",
+    "type": "police",
+    "text": "If you consent to a search, you waive Fourth Amendment protections.",
+    "tags": ["search", "consent"],
+    "applies_when": "Police ask to search",
+    "example": "Car search request",
+    "risk": "Losing rights",
+    "action": "Refuse clearly",
+    "script": "I do not consent to any searches.",
+    "state_notes": {}
+  }
+]
