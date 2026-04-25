@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "name": "Joe Biden",
+    "role": "President",
+    "party": "Democrat",
+    "state": "USA",
+    "bio": "46th President of the United States"
+  },
+  {
+    "id": 2,
+    "name": "Kamala Harris",
+    "role": "Vice President",
+    "party": "Democrat",
+    "state": "USA",
+    "bio": "Vice President of the United States"
+  },
+  {
+    "id": 3,
+    "name": "Gavin Newsom",
+    "role": "Governor",
+    "party": "Democrat",
+    "state": "California",
+    "bio": "Governor of California"
+  },
+  {
+    "id": 4,
+    "name": "Greg Abbott",
+    "role": "Governor",
+    "party": "Republican",
+    "state": "Texas",
+    "bio": "Governor of Texas"
+  },
+  {
+    "id": 5,
+    "name": "Ron DeSantis",
+    "role": "Governor",
+    "party": "Republican",
+    "state": "Florida",
+    "bio": "Governor of Florida"
+  }
+]

@@ -1,0 +1,77 @@
+[
+  {
+    "title": "Amendment I",
+    "keywords": ["speech", "religion", "press", "assembly"],
+    "content": "Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging the freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances."
+  },
+  {
+    "title": "Amendment II",
+    "keywords": ["gun", "arms", "weapons"],
+    "content": "A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed."
+  },
+  {
+    "title": "Amendment III",
+    "keywords": ["soldiers", "quartering"],
+    "content": "No Soldier shall, in time of peace be quartered in any house, without the consent of the Owner."
+  },
+  {
+    "title": "Amendment IV",
+    "keywords": ["search", "seizure", "police", "warrant"],
+    "content": "The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures..."
+  },
+  {
+    "title": "Amendment V",
+    "keywords": ["self", "incrimination", "due process"],
+    "content": "No person shall be held to answer for a capital crime... nor shall be compelled in any criminal case to be a witness against himself..."
+  },
+  {
+    "title": "Amendment VI",
+    "keywords": ["trial", "jury", "lawyer"],
+    "content": "In all criminal prosecutions, the accused shall enjoy the right to a speedy and public trial..."
+  },
+  {
+    "title": "Amendment VII",
+    "keywords": ["civil", "jury"],
+    "content": "In Suits at common law... the right of trial by jury shall be preserved..."
+  },
+  {
+    "title": "Amendment VIII",
+    "keywords": ["bail", "punishment"],
+    "content": "Excessive bail shall not be required, nor excessive fines imposed..."
+  },
+  {
+    "title": "Amendment IX",
+    "keywords": ["rights"],
+    "content": "The enumeration in the Constitution of certain rights shall not be construed to deny others retained by the people."
+  },
+  {
+    "title": "Amendment X",
+    "keywords": ["states", "powers"],
+    "content": "The powers not delegated to the United States... are reserved to the States respectively."
+  },
+  {
+    "title": "Amendment XIII",
+    "keywords": ["slavery"],
+    "content": "Neither slavery nor involuntary servitude... shall exist within the United States."
+  },
+  {
+    "title": "Amendment XIV",
+    "keywords": ["citizenship", "equal protection"],
+    "content": "All persons born or naturalized in the United States... are citizens..."
+  },
+  {
+    "title": "Amendment XV",
+    "keywords": ["vote", "race"],
+    "content": "The right of citizens to vote shall not be denied on account of race..."
+  },
+  {
+    "title": "Amendment XIX",
+    "keywords": ["women", "vote"],
+    "content": "The right to vote shall not be denied on account of sex."
+  },
+  {
+    "title": "Amendment XXVI",
+    "keywords": ["age", "18"],
+    "content": "The right to vote shall not be denied to citizens 18 or older."
+  }
+]

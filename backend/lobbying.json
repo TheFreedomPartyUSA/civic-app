@@ -1,0 +1,26 @@
+[
+  {
+    "politician": "Joe Biden",
+    "organization": "Google",
+    "amount": "$500000",
+    "type": "Corporate PAC"
+  },
+  {
+    "politician": "Joe Biden",
+    "organization": "Amazon",
+    "amount": "$300000",
+    "type": "Corporate PAC"
+  },
+  {
+    "politician": "Greg Abbott",
+    "organization": "Oil & Gas Assoc",
+    "amount": "$700000",
+    "type": "Industry Lobby"
+  },
+  {
+    "politician": "Gavin Newsom",
+    "organization": "Healthcare Group",
+    "amount": "$400000",
+    "type": "Lobby Group"
+  }
+]
