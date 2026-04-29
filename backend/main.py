@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from openai import OpenAI
 import os
@@ -10,67 +10,92 @@ from services.bills_api import search_bills
 from services.voting_api import search_votes
 
 # -----------------------
-# ENV
+# ENV SETUP
 # -----------------------
 load_dotenv()
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key=OPENAI_API_KEY) if OPENAI_API_KEY else None
 
 # -----------------------
-# APP
+# APP INIT
 # -----------------------
-app = FastAPI()
+app = FastAPI(title="Civic API", version="1.0")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"],  # tighten later for production
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 # -----------------------
+# SAFE JSON LOADER
+# -----------------------
+def load_json_file(path):
+    try:
+        with open(path, "r") as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"[ERROR] Failed loading {path}: {e}")
+        return []
+
+# -----------------------
 # LOAD DATA
 # -----------------------
-with open("constitution.json", "r") as f:
-    constitution_data = json.load(f)
-
-with open("politicians.json", "r") as f:
-    politicians_data = json.load(f)
-
-with open("lobbying.json", "r") as f:
-    lobbying_data = json.load(f)
+constitution_data = load_json_file("constitution.json")
+politicians_data = load_json_file("politicians.json")
+lobbying_data = load_json_file("lobbying.json")
 
 # -----------------------
 # LEGAL SEARCH
 # -----------------------
 def find_relevant_section(question: str):
+    if not constitution_data:
+        return None
+
     question = question.lower()
     best_match = None
     best_score = 0
 
     for section in constitution_data:
-        score = 0
+        try:
+            score = 0
 
-        for keyword in section["keywords"]:
-            if keyword in question:
-                score += 5
+            keywords = section.get("keywords", [])
+            content = section.get("content", "").lower()
 
-        for word in question.split():
-            if word in section["content"].lower():
-                score += 1
+            for keyword in keywords:
+                if keyword.lower() in question:
+                    score += 5
 
-        if score > best_score:
-            best_score = score
-            best_match = section
+            for word in question.split():
+                if word in content:
+                    score += 1
+
+            if score > best_score:
+                best_score = score
+                best_match = section
+
+        except Exception:
+            continue
 
     return best_match
 
 # -----------------------
-# ROUTES
+# ROOT / HEALTH
 # -----------------------
 @app.get("/")
 def root():
-    return {"message": "Backend running"}
+    return {"status": "running"}
+
+@app.get("/health")
+def health():
+    return {
+        "status": "ok",
+        "openai_configured": bool(OPENAI_API_KEY)
+    }
 
 # -----------------------
 # RIGHTS AI
@@ -79,6 +104,12 @@ def root():
 def ask(question: str):
     section = find_relevant_section(question)
     context = section["content"] if section else "No legal match found"
+
+    if not client:
+        return {
+            "answer": f"(No AI key configured)\n\n{context}",
+            "source": section["title"] if section else "None"
+        }
 
     try:
         response = client.chat.completions.create(
@@ -105,7 +136,8 @@ Respond clearly:
 
         answer = response.choices[0].message.content
 
-    except:
+    except Exception as e:
+        print(f"[ERROR] OpenAI call failed: {e}")
         answer = f"(Fallback Mode)\n\n{context}"
 
     return {
@@ -118,34 +150,48 @@ Respond clearly:
 # -----------------------
 @app.get("/representatives")
 def get_reps(address: str = ""):
-    return get_representatives(address)
+    try:
+        return get_representatives(address)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 # -----------------------
 # BILLS
 # -----------------------
 @app.get("/bills")
 def get_bills(query: str = ""):
-    return search_bills(query)
+    try:
+        return search_bills(query)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 # -----------------------
 # VOTES
 # -----------------------
 @app.get("/votes")
 def get_votes(query: str = ""):
-    return search_votes(query)
+    try:
+        return search_votes(query)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
 
 # -----------------------
 # LOBBYING / MONEY
 # -----------------------
 @app.get("/lobbying")
 def get_lobbying(name: str = ""):
+    if not lobbying_data:
+        return []
+
     if not name:
         return lobbying_data
 
+    name = name.lower()
+
     results = [
         l for l in lobbying_data
-        if name.lower() in l["politician"].lower()
-        or name.lower() in l["organization"].lower()
+        if name in l.get("politician", "").lower()
+        or name in l.get("organization", "").lower()
     ]
 
     return results
